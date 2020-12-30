@@ -7,13 +7,14 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from 'redux';
 import promiseMiddlerware from "redux-promise";
 import reduxThunk from "redux-thunk";
-import reducer from "./_reducers";
+import reducer from "./_reducers/userReducer";
 
 
 const createStoreWidthMiddleware = applyMiddleware(
   promiseMiddlerware,
   reduxThunk
 )(createStore);
+
 
 ReactDOM.render(
   <React.StrictMode>
