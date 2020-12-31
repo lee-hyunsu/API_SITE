@@ -1,21 +1,16 @@
-import React from "react";
-//import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
-import LoginPage from "./components/LoginPage/LoginPage";
-import RegisterPage from "./components/RegisterPage/RegisterPage";
-function App() {
-  return (
-    <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/register" component={RegisterPage} />
-        </Switch>
-      </div>
-    </Router>
-  );
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { Home, Auth } from './pages';
+
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <Route exact path="/" component={Home}/>
+                <Route path="/auth" component={Auth}/>
+            </div>
+        );
+    }
 }
 
 export default App;
